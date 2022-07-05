@@ -28,7 +28,7 @@ tracks$ID <- do.call(
   stringr::str_split(tracks$ID, pattern = stringr::fixed(":"))
   )[,2]
 
-## keep just males (removing 2 males caught in Maur.)
+## keep just 2021 individauls (removing 2 males caught in Maur.)
 tracks <- subset(
   tracks, 
   ID %in% c("213020", "213021", "213037", "213038", 
