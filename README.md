@@ -1,5 +1,5 @@
 Satellite-tracking reveals first evidence of sex-specific migration
-distance in a sea turtle
+distance in green turtles
 ================
 
 ### Overview

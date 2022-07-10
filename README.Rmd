@@ -1,5 +1,5 @@
 ---
-title: "Satellite-tracking reveals first evidence of sex-specific migration distance in a sea turtle"
+title: "Satellite-tracking reveals first evidence of sex-specific migration distance in green turtles"
 output: github_document
 ---
 
