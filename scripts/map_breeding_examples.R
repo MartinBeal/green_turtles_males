@@ -155,16 +155,25 @@ for(i in seq_along(lineslist)){
         style="bar", height=unit(0.3, "cm"),
         line_width = 1, text_cex = 1, text_face = "bold")
     } +
+    {if(id == "213040") ## make lat lon ticks only show in one plot
+      scale_y_continuous(breaks = c(10.9, 11.1, 11.3))
+    } + 
+    {if(id == "213040")
+      scale_x_continuous(breaks = c(-16.4, -16.0, -15.6))
+    } + 
     theme_bw() +
     theme(
       panel.grid.major = element_blank(),
       panel.grid.minor = element_blank(),
-      axis.text = element_blank(),
-      axis.ticks = element_blank(),
       panel.background=element_rect(colour="black", fill="white"),
       legend.position = "none",
       strip.background = element_rect(fill="white")) +
-    ggtitle(label=paste("ID:", id))
+    ggtitle(label=paste("ID:", id)) +
+    {if(id != "213040") ## clean axes in other two maps
+      theme(
+        axis.text = element_blank(),
+        axis.ticks = element_blank())
+    }
   
   ## plot
   nsd <- ggplot() + 
@@ -203,5 +212,5 @@ maps <- (maplist[[1]] +
      inset_element(nsdlist[[3]], .0, -.05, .38, .4, align_to = 'panel'))
 # maps
 
-ggsave("figures/testcomb4.png", 
+ggsave("figures/testcomb5.png", 
        plot=maps, width=6, height = 10.5)
