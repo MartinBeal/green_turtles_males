@@ -1,5 +1,7 @@
 ## Delimit stages for each individual, based on visual inspection of NSD graphs
 
+pacman::p_load(lubridate)
+
 meta <- read.csv("data/stage_dates.csv") # metadata
 
 meta$PTT <- as.character(meta$PTT)
@@ -10,8 +12,8 @@ meta <- meta %>% mutate(
 )
 
 ## Movement data - either filtered, or model-predicted ------------------------
-B <- TRUE
-# B <- FALSE
+# B <- TRUE
+B <- FALSE
 
 ## speed filtered
 if(B == FALSE){
